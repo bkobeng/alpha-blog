@@ -1,0 +1,30 @@
+
+
+
+
+
+
+<h1 align="center"><%= @listing.title %></h1>
+<div class="well col-xs-8 col-xs-offset-2">
+  <h4 class="center description">
+      Description
+      <p><%= simple_format(@listing.description) %></p>
+
+</h4>
+  <span style="font-size:1.3em">
+  <p>City: <%=@listing.city %></p>
+  <p>Contact: <%=@listing.contact %></p>
+  <p><%=@listing.address %></p>
+  <p><%=@listing.price %></p>
+  <p><%=time_ago_in_words( @listing.created_at) %></p>
+    </span>
+  <div class="listing-action">
+    <%=link_to 'Edit service',edit_listing_path(@listing),class:"btn btn-xs btn-primary" %>
+    <%=link_to 'Delete',listing_path(@listing),method: :delete,
+               data:{confirm:'do you want to delete'},class:"btn btn-xs btn-danger" %>
+    <%=link_to 'back to service',root_path, class:'btn btn-xs btn-success' %>
+  </div>
+
+</div>
+
+

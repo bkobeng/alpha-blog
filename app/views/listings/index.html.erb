@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="jumbotron text-center">
+      <h2>Find A Service</h2>
+      <form>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="Search Service">
+            <span class="input-group-addon">@</span>
+          </div>
+        </div>
+      </form>
+      <br><br>
+    </div>
+  </div>
+</div>
+
+
+
+ <h1 align="center">Featured Service</h1>
+
+ <% @listings.each  do |listing| %>
+
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="well well-lg">
+        <div class="listing-title">
+          <%= link_to listing.title, listing_path(listing)%>
+        </div>
+        <div class="listing-body">
+          <%= truncate(listing.description,length:100)%>
+          <p>City: <%=listing.city %></p>
+          <p>Contact: <%=listing.contact %></p>
+          <p><%=listing.address %></p>
+          <p><%=listing.price %></p>
+          <p><%=time_ago_in_words( listing.created_at) %></p>
+        </div>
+          <div class="listing-action">
+            <%=link_to 'Edit service',edit_listing_path(listing),class:"btn btn-xs btn-primary" %>
+            <%=link_to 'Delete',listing_path(listing),method: :delete,
+                       data:{confirm:'do you want to delete'},class:"btn btn-xs btn-danger" %>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <%end %>
+
+
+

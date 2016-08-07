@@ -1,0 +1,78 @@
+
+<%=render 'shared/errors' ,obj:@listing%>
+
+
+<div class="row">
+  <div class="container">
+    <div class="col-xs-12">
+
+
+<%= form_for  @listing, :html => {class:"form-horizontal",role:"form"}  do |f| %>
+        <div class="form-group">
+              <div class=" control-label col-sm-2">
+                <%= f.label :title, "Item Name:" %>
+                </div>
+          <div class="col-sm-8">
+            <%= f.text_field :title, class: "form-control", placeholder:"Enter Item name" ,autofocus:true%>
+          </div>
+              </div>
+
+          <div class="form-group">
+            <div class=" control-label col-sm-2">
+              <%= f.label :description, 'Item Description:' %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.text_area :description, rows: 8,class: "form-control", placeholder:"Item Description" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class=" control-label col-sm-2">
+              <%= f.label :city, "City:" %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.text_field :city, class: "form-control", placeholder:"City" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class=" control-label col-sm-2">
+              <%= f.label :contact, "contact:" %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.text_field :contact, class: "form-control", placeholder:"contact" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class=" control-label col-sm-2">
+              <%= f.label :address, "Address:" %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.text_field :address, class: "form-control", placeholder:"Address" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class=" control-label col-sm-2">
+              <%= f.label :price, "Price:" %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.text_field :price, class: "form-control", placeholder:"Price" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class=" control-label col-sm-2">
+
+            </div>
+            <div class="col-sm-offset-2 col-sm-10">
+              <%= f.submit class: "btn btn-lg  btn-primary" %>
+            </div>
+          </div>
+
+<%end %>
+      <div class="col-xs-4 col-xs-offset-4 ">
+       [ <%=link_to 'Cancel Request and return to Service Listing',root_path %> ]
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
